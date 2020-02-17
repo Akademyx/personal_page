@@ -1,33 +1,35 @@
 import React from 'react';
 import './header.css';
-// import './about.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import { theForm } from './form.js'
-// import Navbar from 'react-bootstrap/NavBar';
-// import Bootstrap from 'react-bootstrap/bootstrap';
+// import { Selection } from './form.js'
 import './about.css';
-//header should rotate images
+import { RadioButton } from './radio_button.js'
+
 
 export class Heading extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             class: "about",
-            style: "about",
+            style: "about"
+        }
+    }
+
+    radioChangeHandler(e) {
+        if (e.target.value != this.state.class) {
+            this.setState({ class: e.target.value })
         }
     }
 
     render() {
-
         let getBackGroundColor = Math.random() > 0.5? "green" : "yellow";
-        // let getBackgroundColor = "green"
+
         let heading = {
             backgroundColor: getBackGroundColor,
             height: "400px",
             width: "100%",
             display: "block",
-            // padding: "auto"
-        }
+    }
+ 
 
         return (
             <div
@@ -45,7 +47,16 @@ export class Heading extends React.Component {
                 <div
                     className='navBar'
                 >
-                 {theForm}
+                    <form>
+                        <RadioButton 
+                            name="about"
+                            value="about"
+                            changed={ this.radioChangeHandler}
+                            // isSelected={}
+                        />
+                        <RadioButton />
+                        <RadioButton />
+                    </form>
                 </div>
                 <div
                     className={this.state.class}

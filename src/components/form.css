@@ -1,10 +1,4 @@
 
-/* .radio {
-    margin: auto;
-    display:inline-block;
-    justify-content: space-evenly;
-} */
-/* 
-label {
-    justify-content: space-evenly;
-} */
+form {
+    align-items: center;
+}

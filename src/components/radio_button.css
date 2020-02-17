@@ -1,0 +1,10 @@
+.radio {
+    margin: 0 5%;
+    display:inline-block;
+    color: purple;
+}
+
+label {
+    justify-content: space-evenly;
+    margin-top: 50%;
+}
