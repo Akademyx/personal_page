@@ -18,7 +18,7 @@ body, div {
     display: block;
     background-image: url("./static/keyboard.jpg");
     /* image-rendering: pixelated; */
-    background-size: auto;
+    background-size: cover;
 }
 
 .red {

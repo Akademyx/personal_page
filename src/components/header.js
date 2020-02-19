@@ -32,7 +32,7 @@ export class Heading extends React.Component {
         let getNumber = Math.floor(Math.random() * (4 - 0) + 0);
         console.log(getNumber)
         // let getBackGround = this.state.background[getNumber]
-        let getBackGround = this.state.background[2]
+        let getBackGround = this.state.background[getNumber]
 
         return (
             <div
