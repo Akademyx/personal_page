@@ -1,47 +1,53 @@
 import React from 'react';
 import './header.css';
-// import { Selection } from './form.js'
 import './about.css';
+import './projects.css';
+import './contact.css';
 import { RadioButton } from './radio_button.js'
+import home from './static/home.png';
+import ruby from './static/RUBY.png';
+import angular from './static/angular.png';
 
+var ReactRotatingText = require('react-rotating-text');
 
 export class Heading extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             class: "about",
-            style: "about"
+            message: ["Stuff", "Rude", "TV"]
         }
+
+        this.radioChangeHandler = this.radioChangeHandler.bind(this)
     }
 
     radioChangeHandler(e) {
-        if (e.target.value != this.state.class) {
-            this.setState({ class: e.target.value })
-        }
+        this.setState({class: e.target.value})
+        // e.preventDefault();
     }
+
+    componentWillUpdate
 
     render() {
-        let getBackGroundColor = Math.random() > 0.5? "green" : "yellow";
-
-        let heading = {
-            backgroundColor: getBackGroundColor,
-            height: "400px",
-            width: "100%",
-            display: "block",
-    }
- 
+        let getBackGround = Math.random() > 0.5? "green" : "yellow";
 
         return (
             <div
                 className="wrapper"
                 >
                 <div
-                    style={heading}
+                    className={getBackGround}
                 >
                     <div
                         className="nameFrame"
                     >
-                        <h1>Inside Box</h1>
+                        <h1>
+                            <ReactRotatingText
+                                className=".react-rotating-text-cursor"
+                                items={['first', 'second', 'third']}
+                                pause="3000"
+                                />
+                        </h1>
                     </div>
                 </div>
                 <div
@@ -52,10 +58,26 @@ export class Heading extends React.Component {
                             name="about"
                             value="about"
                             changed={ this.radioChangeHandler}
-                            // isSelected={}
+                            isSelected={this.state.class === "about"}
+                            img={home}
+                            alt="home.png"
                         />
-                        <RadioButton />
-                        <RadioButton />
+                        <RadioButton 
+                            name="projects"
+                            value="projects"
+                            changed={this.radioChangeHandler}
+                            isSelected={this.state.class === "projects"}
+                            img={ruby}
+                            alt="ruby.png"
+                        />
+                        <RadioButton 
+                            name="contact"
+                            value="contact"
+                            changed={this.radioChangeHandler}
+                            isSelected={this.state.class === "contact"}
+                            img={angular}
+                            alt="angular.png"
+                        />
                     </form>
                 </div>
                 <div
@@ -67,41 +89,3 @@ export class Heading extends React.Component {
 
 }
 
-// export function Heading() {
-//     let getBackGroundColor = Math.random() > 0.5 ? "green" : "rgb(45, 61, 202)";
-
-//     let heading = {
-//         backgroundColor: getBackGroundColor,
-//         // display: "flex",
-//         // position: "absolute",
-//         height: "400px",
-//         width: "100%",
-//         // padding: "25% 20%",
-//         // alignItems: "center",
-//         // padding: "auto",
-//         // zIndex: "-1",
-//         // verticalAlign: "center"
-//     }
-
-//     return (
-//         <div>
-//             <div
-//                 style={heading}
-//             >
-//                 <div
-//                     className="nameFrame"
-//                 >
-//                     <h1>
-//                         inside box
-//                     </h1>
-//                 </div>
-//             </div>
-//             <div
-//                 className="navBar"
-//             >
-                
-//             </div>
-//             <div></div>
-//         </div>
-//     )
-// }

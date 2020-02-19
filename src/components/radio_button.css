@@ -1,5 +1,5 @@
 .radio {
-    margin: 0 5%;
+    margin: 0 10%;
     display:inline-block;
     color: purple;
 }
@@ -7,4 +7,37 @@
 label {
     justify-content: space-evenly;
     margin-top: 50%;
+}
+
+label > input {
+    visibility: hidden;
+    position: absolute;
+}
+
+label > input + img {
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+label > input:checked + img {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 100%;
+    -webkit-box-shadow: 0px 0px 30px 13px #fde61c;
+    -moz-box-shadow: 0px 0px 30px 13px #fde61c;
+    box-shadow: 0px 0px 30px 13px #fde61c;
+}
+
+label > img {
+    height: 41px;
+    /* width: 30px; */
+}
+
+label>img:hover {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 100%;
+    -webkit-box-shadow: 0px 0px 30px 6px rgba(0, 255, 0, 0.67);
+    -moz-box-shadow: 0px 0px 30px 6px rgba(0, 255, 0, 0.67);
+    box-shadow: 0px 0px 30px 6px rgba(0, 255, 0, 0.67);
 }

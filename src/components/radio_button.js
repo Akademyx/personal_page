@@ -13,12 +13,12 @@ export const RadioButton = (props) => {
                             onChange={props.changed}
                             checked={props.isSelected}
                         />
-                        {/* <img
-                            src={home}
-                            alt="home"
+                        <img
+                            src={props.img}
+                            alt={props.alt}
                             className="icon"
                         >
-                        </img> */}
+                        </img>
                     </label>
                 </div>
     )
