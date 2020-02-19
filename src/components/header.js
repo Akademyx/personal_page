@@ -15,7 +15,8 @@ export class Heading extends React.Component {
         super(props)
         this.state = {
             class: "about",
-            message: ["Stuff", "Rude", "TV"]
+            message: ["Stuff", "Rude", "TV"],
+            background: ['green', 'yellow', 'red', 'blue']
         }
 
         this.radioChangeHandler = this.radioChangeHandler.bind(this)
@@ -23,13 +24,15 @@ export class Heading extends React.Component {
 
     radioChangeHandler(e) {
         this.setState({class: e.target.value})
-        // e.preventDefault();
     }
 
     componentWillUpdate
 
     render() {
-        let getBackGround = Math.random() > 0.5? "green" : "yellow";
+        let getNumber = Math.floor(Math.random() * (4 - 0) + 0);
+        console.log(getNumber)
+        // let getBackGround = this.state.background[getNumber]
+        let getBackGround = this.state.background[2]
 
         return (
             <div
@@ -42,10 +45,11 @@ export class Heading extends React.Component {
                         className="nameFrame"
                     >
                         <h1>
+                           
                             <ReactRotatingText
                                 className=".react-rotating-text-cursor"
-                                items={['first', 'second', 'third']}
-                                pause="3000"
+                                items={['Alex Tran','Front End', 'Back End', 'Full Stack', 'Software Developer']}
+                                pause="1000"
                                 />
                         </h1>
                     </div>
