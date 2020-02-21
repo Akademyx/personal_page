@@ -1,12 +1,15 @@
 import React from 'react';
 import './header.css';
-import './about.css';
-import './projects.css';
-import './contact.css';
+// import './about.css';
+// import './projects.css';
+// import './contact.css';
 import { RadioButton } from './radio_button.js'
 import home from './static/home.png';
-import ruby from './static/RUBY.png';
-import angular from './static/angular.png';
+import folder from './static/folder-flat.png';
+import email from './static/email_icon.png';
+import {Contact} from './subcomponent/contacts.js'
+import {Project} from './subcomponent/projects.js'
+import {AboutPage} from './subcomponent/about.js'
 
 var ReactRotatingText = require('react-rotating-text');
 
@@ -16,23 +19,35 @@ export class Heading extends React.Component {
         this.state = {
             class: "about",
             message: ["Stuff", "Rude", "TV"],
-            background: ['green', 'yellow', 'red', 'blue']
+            background: ['green', 'yellow', 'red', 'blue'],
+            displayed: <AboutPage />
         }
 
         this.radioChangeHandler = this.radioChangeHandler.bind(this)
     }
 
     radioChangeHandler(e) {
-        this.setState({class: e.target.value})
+        if(e.target.value === 'about'){
+            this.setState({class: e.target.value, displayed: <AboutPage/>})
+        } else if(e.target.value === 'projects') {
+            this.setState({class:e.target.value, displayed: <Project />})
+        } else if(e.target.value === 'contact') {
+            this.setState({class:e.target.value, displayed: <Contact />})
+        }
     }
 
-    componentWillUpdate
-
     render() {
-        let getNumber = Math.floor(Math.random() * (4 - 0) + 0);
-        console.log(getNumber)
+        let getNumber = Math.floor(Math.random() * (3 - 0) + 0);
         // let getBackGround = this.state.background[getNumber]
-        let getBackGround = this.state.background[getNumber]
+        let getBackGround = this.state.background[getNumber];
+        // let displayed = {this.state.displayed};
+        // if(this.state.class === 'about'){
+        //     displayed = <AboutPage />
+        // } else if ( this.state.class === 'projects'){
+        //     displayed = <Project />
+        // } else {
+        //     displayed = <Contact />
+        // }
 
         return (
             <div
@@ -71,22 +86,20 @@ export class Heading extends React.Component {
                             value="projects"
                             changed={this.radioChangeHandler}
                             isSelected={this.state.class === "projects"}
-                            img={ruby}
-                            alt="ruby.png"
+                            img={folder}
+                            alt="folder.png"
                         />
                         <RadioButton 
                             name="contact"
                             value="contact"
                             changed={this.radioChangeHandler}
                             isSelected={this.state.class === "contact"}
-                            img={angular}
-                            alt="angular.png"
+                            img={email}
+                            alt="email.png"
                         />
                     </form>
                 </div>
-                <div
-                    className={this.state.class}
-                > new </div>
+                    {this.state.displayed}
             </div>
         )
     }
