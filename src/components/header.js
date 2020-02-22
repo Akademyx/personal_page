@@ -1,8 +1,6 @@
 import React from 'react';
 import './header.css';
-// import './about.css';
-// import './projects.css';
-// import './contact.css';
+
 import { RadioButton } from './radio_button.js'
 import home from './static/home.png';
 import folder from './static/folder-flat.png';
@@ -10,6 +8,7 @@ import email from './static/email_icon.png';
 import {Contact} from './subcomponent/contacts.js'
 import {Project} from './subcomponent/projects.js'
 import {AboutPage} from './subcomponent/about.js'
+
 
 var ReactRotatingText = require('react-rotating-text');
 
@@ -38,18 +37,8 @@ export class Heading extends React.Component {
 
     render() {
         let getNumber = Math.floor(Math.random() * (3 - 0) + 0);
-        // let getBackGround = this.state.background[getNumber]
         let getBackGround = this.state.background[getNumber];
-        // let displayed = {this.state.displayed};
-        // if(this.state.class === 'about'){
-        //     displayed = <AboutPage />
-        // } else if ( this.state.class === 'projects'){
-        //     displayed = <Project />
-        // } else {
-        //     displayed = <Contact />
-        // }
-
-        return (
+           return (
             <div
                 className="wrapper"
                 >
@@ -79,6 +68,7 @@ export class Heading extends React.Component {
                             changed={ this.radioChangeHandler}
                             isSelected={this.state.class === "about"}
                             img={home}
+                            //    img='./static/home.png'
                             alt="home.png"
                         />
                         <RadioButton 
