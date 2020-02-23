@@ -8,7 +8,7 @@ export function Contact() {
     const link = '../static/'
     const pItems = {
         // img: link+'Mobile-Smartphone-icon.png',
-        img: {phone},
+        img: link+"Mobile-Smartphone-icon.png",
         alt: 'broken',
         description: 'Phone Number: ',
         value: '(661)755-3028'
