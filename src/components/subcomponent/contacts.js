@@ -8,6 +8,7 @@ export function Contact() {
     const link = '../static/'
     const pItems = {
         // img: link+'Mobile-Smartphone-icon.png',
+        // img: {pIcon},
         img: link+"Mobile-Smartphone-icon.png",
         alt: 'broken',
         description: 'Phone Number: ',
