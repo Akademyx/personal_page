@@ -9,26 +9,18 @@ export function Contact() {
     const pItems = {
         // img: link+'Mobile-Smartphone-icon.png',
         // img: {pIcon},
-        img: link+"Mobile-Smartphone-icon.png",
-        alt: 'broken',
         description: 'Phone Number: ',
         value: '(661)755-3028'
     }
     const lItems ={
-        img: link+ 'linkedin.png',
-        alt: 'broken',
         description: 'LinkedIn',
         value: 'https://www.linkedin.com/in/lxtran8501/'
     }
     const github ={
-        img: link+ 'github.png',
-        alt: 'damit',
         description: 'GitHub',
         value: 'https://github.com/Akademyx'
     }
     const eM = {
-        img: link+'email_icon.png',
-        alt: 'damit',
         description:'Email',
         value: 'www.LxDemikz@gmail.com'
     }
