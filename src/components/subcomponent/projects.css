@@ -3,5 +3,33 @@
     height: 100vh;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 50px;
+}
+
+.projectWrapper {
+    min-height: 50px;
+    width: 500px;
+    background-color: grey;
+    border-radius: 4em;
+    text-align: center;
+    padding: 15px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.contents{
+    vertical-align: top;
+}
+
+.description_side {
+    /* background: green; */
+    /* display:inline-block; */
+    margin: auto;
+}
+
+.list_side {
+    /* background:yellow; */
+    display:inline-block;
+    list-style: none;
+    margin: auto;
 }
