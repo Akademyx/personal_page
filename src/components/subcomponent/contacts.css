@@ -1,7 +1,7 @@
 .contacts {
     height: 100vh;
     width: 100%;
-    background-color: yellowgreen;
+    background-image:url('../static/science_abstract.jpg');
     margin: 0;
     padding-top: 3%;
     text-align: center;
